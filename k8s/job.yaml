@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: globeco-script-initialize
+  namespace: globeco
+spec:
+  template:
+    spec:
+      containers:
+      - name: script-runner
+        image: kasbench/globeco-script-runner:latest
+        command: ["python", "runner.py", "initialize"]
+        workingDir: /app
+      restartPolicy: Never
+  backoffLimit: 2 
