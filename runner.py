@@ -1,5 +1,6 @@
 import sys
 import importlib
+import initialize
 
 
 def main():
@@ -12,7 +13,7 @@ def main():
 
     if script_name == "initialize":
         # Dynamically import the initialize module
-        initialize = importlib.import_module("initialize")
+        # initialize = importlib.import_module("initialize")
         # Call the run function with positional arguments
         initialize.run(*script_args)
     else:
