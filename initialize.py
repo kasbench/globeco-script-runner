@@ -347,23 +347,23 @@ def run(*args, **kwargs):
 
     logger.info("Securities created: %s", len(securities))
 
-    portfolios = get_or_create_all_portfolios(10_000, url=portfolio_service_url)
+    # portfolios = get_or_create_all_portfolios(10_000, url=portfolio_service_url)
 
-    logger.info("Portfolios created: %s", len(portfolios))  
+    # logger.info("Portfolios created: %s", len(portfolios))  
 
-    portfolio_ids = [p['portfolio_id'] for p in portfolios.values()]
+    # portfolio_ids = [p['portfolio_id'] for p in portfolios.values()]
 
-    transactions = create_cash_transactions(portfolio_ids[:])
+    # transactions = create_cash_transactions(portfolio_ids[:])
 
-    total_requested, successful, failed, results = post_transactions(transactions, url=portfolio_accounting_service_url)
+    # total_requested, successful, failed, results = post_transactions(transactions, url=portfolio_accounting_service_url)
 
-    logger.info("Transactions posted: %s", total_requested)
-    logger.info("Transactions successful: %s", successful)
-    logger.info("Transactions failed: %s", failed)
+    # logger.info("Transactions posted: %s", total_requested)
+    # logger.info("Transactions successful: %s", successful)
+    # logger.info("Transactions failed: %s", failed)
 
-    create_models(num_positions_per_model=50, num_portfolios_per_model=100, url=order_generation_service_url)
+    # create_models(num_positions_per_model=50, num_portfolios_per_model=100, url=order_generation_service_url)
 
-    logger.info("Models created")
+    # logger.info("Models created")
 
     logger.info("Script completed")
 
